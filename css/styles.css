@@ -1,0 +1,339 @@
+body {
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+  #fomo_feed{
+    max-width: 400px;
+    text-align: center;
+  }
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(250, 250, 250, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+.orbit-spinner, .orbit-spinner * {
+    box-sizing: border-box;
+  }
+
+  .orbit-spinner {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    perspective: 800px;
+  }
+
+  .orbit-spinner .orbit {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .orbit-spinner .orbit:nth-child(1) {
+    left: 0%;
+    top: 0%;
+    animation: orbit-spinner-orbit-one-animation 1200ms linear infinite;
+    border-bottom: 3px solid #11cece;
+  }
+
+  .orbit-spinner .orbit:nth-child(2) {
+    right: 0%;
+    top: 0%;
+    animation: orbit-spinner-orbit-two-animation 1200ms linear infinite;
+    border-right: 3px solid #11cece;
+  }
+
+  .orbit-spinner .orbit:nth-child(3) {
+    right: 0%;
+    bottom: 0%;
+    animation: orbit-spinner-orbit-three-animation 1200ms linear infinite;
+    border-top: 3px solid #11cece;
+  }
+
+  @keyframes orbit-spinner-orbit-one-animation {
+    0% {
+      transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+    100% {
+      transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
+  }
+
+  @keyframes orbit-spinner-orbit-two-animation {
+    0% {
+      transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    }
+    100% {
+      transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    }
+  }
+
+  @keyframes orbit-spinner-orbit-three-animation {
+    0% {
+      transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    }
+    100% {
+      transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    }
+  }
+
+  .lazyImg {
+    opacity: .8;
+    transition: all .3s ease-in-out;
+  }
+  .b-loaded {
+    opacity: 1;
+  }
+
+/* Main */
+.img-responsive {
+  position: relative;
+  max-width: 100%;
+}
+.Main {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.ContainerLeft {
+  position: relative;
+  width: 100%;
+}
+.ContainerRight {
+  min-width: 400px;
+  max-width: 400px;
+  position: relative;
+}
+.FormContainer {
+  background-color: #f6f7f9;
+  min-width: 400px;
+  max-width: 400px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 16px 30px;
+  -webkit-box-shadow: -5px 0px 8px -6px rgba(117,117,117,0.65);
+  -moz-box-shadow: -5px 0px 8px -6px rgba(117,117,117,0.65);
+  box-shadow: -5px 0px 8px -6px rgba(117,117,117,0.65);
+}
+.Form {
+  position: relative;
+  height: 100%;
+}
+.FormHeader {
+  position: relative;
+}
+.FormHeader h2 {
+  font-size: 12.5px;
+}
+.country-flag {
+  position: absolute;
+  top: 55%;
+  right: 8px;
+}
+.form-group {
+  position: relative;
+  margin-bottom: 4px;
+}
+.form-group label {
+  color: #90a1b5;
+  font-size: 9px;
+  text-transform: uppercase;
+  margin: 0 2px 4px;
+}
+label.error {
+  font-size: 7px;
+  color: #b59090;
+  margin-top: 1px;
+  display: block;
+  padding-left: 2px;
+  position: absolute;
+}
+.form-control {
+  -webkit-tap-highlight-color: transparent;
+  background-color: #fff;
+  border-radius: 4px;
+  border: solid 1px #e0e7ee;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: normal;
+  height: 42px;
+  user-select: none;
+  white-space: nowrap;
+  outline: none;
+  padding-left: 18px;
+  padding-right: 30px;
+  position: relative;
+  margin-bottom: 0;
+}
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #88bfff;
+  outline: 0;
+  box-shadow: none;
+}
+.FormSubmit {
+  position: relative;
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+}
+.btn-success {
+  text-transform: uppercase;
+  font-weight: 600;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.loading-form {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  min-width: 400px;
+  max-width: 400px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading-form-container img {
+  max-width: 200px;
+}
+/* Hero */
+
+.Hero {
+  width: 100%;
+  height: 84vh;
+  position: relative;
+  background-image: url(../img/hero.jpg);
+  background-size: cover;
+}
+
+.HeroContainer {
+  position: relative;
+  padding: 20px;
+  background-color: rgba(0,0,0,.3);
+  width: 100%;
+  height: 100%;
+}
+.HeroLogo {
+  max-width: 200px;
+}
+.HeroCta {
+  position: relative;
+  margin-top: 40vh;
+}
+.HeroCta h1 {
+  color: aliceblue;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 32px;
+}
+
+.clients {
+  position: absolute;
+  bottom: 0;
+  max-width: 100%;
+  padding-top: 16px;
+}
+.clients span {
+  display: block;
+  color: #495057;
+  font-size: 10px;
+  font-weight: 600;
+  text-align: center;
+}
+.clients img {
+  max-width: 100%;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.Product {
+  position: relative;
+  width: 100%;
+}
+.ProductContainer {
+  position: relative;
+  padding: 0 20px;
+}
+.ProductHeader {
+  position: relative;
+  margin: 40px 0 28px;
+}
+.ProductHeader h2{
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.ProductImage {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.ProductDescription {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.ProductDescription p {
+  max-width: 500px;
+  text-align: center;
+  font-size: 14px;
+  color: #495057;
+}
+.ProductBenefits {
+  position: relative;
+  margin-top: 16px;
+}
+.ProductBenefitsTitle {
+  position: relative;
+}
+.ProductBenefitsTitle h2 {
+  text-align: center;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.ProductBenefitsContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.ProductBenefitsContainer .benefit {
+  width: 33%;
+  max-width: 100%;
+  padding: 16px;
+}
+.ProductBenefitsContainer .benefit h4 {
+  font-size: 18px;
+}
+.ProductBenefitsContainer .benefit p {
+  font-size: 12px;
+}
+
+.Testimonial {
+  position: relative;
+}
+.TestimonialContainer {
+  padding: 0 20px;
+}
