@@ -2,9 +2,10 @@
      <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
-      <meta name="description" content="">
-      <meta name="author" content="Carlos Rubio">
-      <title>Acsendo</title>
+      <meta name="description" content="Evalúa las competencias laborales y el desempeño de todos tus colaboradores en cualquier rol. Aplica modelos de competencias de manera fácil. Programa tu demo ahora.">
+      <meta name="author" content="Acsendo">
+      <title>Evaluación de Competencias Desempeño Laboral</title>
+      <link rel="icon" type="image/png" href="favicon.png" />
       <!-- Bootstrap Core CSS -->
       <!-- Latest compiled and minified CSS -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">

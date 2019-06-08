@@ -18,6 +18,83 @@ $('.openModal').on('click', function() {
 function CloseModal() {
   $('#Modal').fadeOut();
 }
+// Animation
+
+$(window).on('scroll', function() {
+  $(".willFade").each(function() {
+    if (isScrolledIntoView($(this))) {
+      $(this).addClass("fadeIn");
+    }
+  });
+
+  $(".willFadeUp").each(function() {
+    if (isScrolledIntoView($(this))) {
+      $(this).addClass("fadeInUp");
+    }
+  });
+
+
+  $(".willFadeLeft").each(function() {
+    if (isScrolledIntoView($(this))) {
+      $(this).addClass("fadeInLeft");
+    }
+  });
+  
+});
+
+function isScrolledIntoView(elem) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
+// Load the IFrame Player API code asynchronously.
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+
+
+function OpenVideo() {
+  $('#VideoTestimonial').fadeIn(400);
+   
+   // Replace the 'ytplayer' element with an <iframe> and
+   // YouTube player after the API code downloads.
+   var player;
+   function onYouTubePlayerAPIReady() {
+     player = new YT.Player('ytplayer', {
+        height: '315',
+        width: '560',
+        videoId: 'b8n6XHcjshw',
+        events: {
+          'onReady': onPlayerReady
+        }
+     });
+   }
+
+
+   // 4. The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+      event.target.playVideo();
+    }
+    function stopVideo() {
+      player.stopVideo();
+    }
+
+
+  onYouTubePlayerAPIReady();
+
+  $('#CloseVideo').click(function() {
+    stopVideo();
+    $('#VideoTestimonial').fadeOut(400);
+  });
+
+}
 
 // Cookie
 function read_cookie(a){
@@ -45,14 +122,26 @@ function findCountry() {
 
     // MX, CO, BR, CONOSUR
 
+    const CO_ADRESS = "Carrera 12 # 96-49 Bogotá, Colombia.";
+    const MX_ADRESS = "Varsovia 36 · Col Juarez. Ciudad de México, México";
+    const CL_ADRESS = "Avenida Apoquindo 5950, Las Condes, Santiago Chile";
 
     switch (result.country_code) {
       case 'CO':
         $('#imgClients').attr('src','img/tres_logos.jpg');
+        $('#address').text(CO_ADRESS);
       break;
       case 'MX':
         $('#imgClients').attr('src','img/tres_logos.jpg');
+        $('#address').text(MX_ADRESS);
       break;
+      case 'CL':
+        $('#imgClients').attr('src','img/tres_logos.jpg');
+        $('#address').text(CL_ADRESS);
+      break;
+      default:
+        $('#imgClients').attr('src','img/tres_logos.jpg');
+        $('#address').text(CO_ADRESS);      
     }
   });
 }
@@ -85,6 +174,7 @@ $(document).ready(function(){
   $('#contacto2').hide();
   $('#loading-form').hide();
   $('#step_2').hide();
+  $('#VideoTestimonial').hide();
   descargar();
 });
 

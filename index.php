@@ -35,26 +35,5 @@
   <script src="js/main.js"></script>
 
   <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/1fbacbf7-dd4f-4deb-ba34-63a6ded66864-loader.js" ></script>
-
-  <!-- <script>
-    // example
-    
-    document.addEventListener('FomoLoaded', function(){
-      fomo.beforeNotificationShow = function(){
-        // add code here.
-        console.log('hello, your notification just appeared!');
-      }
-      fomo.afterNotificationShow = function(){
-        // add code here.
-        console.log('your notification just left the view!');
-      }
-      fomo.afterNotificationClick = function(){
-        // add code here.
-        console.log('your notification was clicked!');
-      }
-    });
-  </script>  -->
-
-
 </body>
 </html>

@@ -3,15 +3,15 @@
 		<input type="hidden" name="country" id="country" class="form-control">
 		<input type="hidden" name="c_utmz" id="c_utmz">
 		<div class="FormHeader">
-			<h2>Ingresa tus datos y participa en una demostración gratuita donde te mostraremos cómo puedes realizar la evaluación de competencias con Acsendo Flex.</h2>
+			<h2>Completa el formulario, nosotros te contactamos</h2>		
 		</div>
 		<div class="form-group">
 			<label for="nombre">Nombre</label>
 			<input type="text" class="form-control" id="name" name="name" placeholder="Nombre" required/>
 		</div>
 		<div class="form-group">
-			<label for="mail">Email</label>
-			<input type="text" class="form-control" id="email" name="email" placeholder="E-mail" required/>
+			<label for="mail">Email corporativo</label>
+			<input type="text" class="form-control" id="email" name="email" placeholder="Email corporativo" required/>
 		</div>
 		<div class="form-group">
 			<label for="phone">Teléfono</label>
@@ -77,7 +77,9 @@
 			<option value="Hoteleria y Turismo">Hoteleria y Turismo</option>  
 		</select>
 	</div>
-	<div class="form-group">
+	<input type="hidden" name="product" value="Competencias 360°">
+
+	<!-- <div class="form-group">
 		<label for="product">Producto</label>
 		<select name="product" id="product" class="form-control">
 			<option value="" selected="">Seleccione</option>
@@ -87,7 +89,7 @@
           <option value="Metas">Metas</option>
           <option value="PID">PID</option>
 		</select>
-	</div>
+	</div> -->
 	<div class="form-group">
 		<label for="dolor">Dolor</label>
 		<select name="dolor" id="dolor" class="form-control">
