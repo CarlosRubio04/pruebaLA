@@ -35,7 +35,7 @@
          <div class="ProductBenefitsContainer">
             <div class="benefit">
                <div class="benefit-icon willFade del100">
-                  <img src="img/ic-001_1.svg" alt="Plataforma de Evaluación de Desempeño">
+                  <img src="img/ic-001_2.svg" alt="Plataforma de Evaluación de Desempeño">
                </div>
                <h4 class="willFadeUp del100">Simplifica el proceso</h4>
                <p class="willFade del100">Ahorra tiempo automatizando el proceso, incluyendo el envío de correos, la tabulación de los resultados y la generación de los reportes finales.</p>
@@ -43,15 +43,15 @@
 
             <div class="benefit">
                <div class="benefit-icon willFade del200">
-                  <img src="img/ic-002_1.svg" alt="Plataforma de Evaluación de Desempeño">
+                  <img src="img/ic-002_2.svg" alt="Plataforma de Evaluación de Desempeño">
                </div>
                <h4 class="willFadeUp del200">Obtén información clave</h4>
-               <p class="willFade del200">Recibe reportes con datos confiables y objetivos acerca del nivel de desempeño de los colaboradores para tomar decisiones estratégicas</p>
+               <p class="willFade del200">Impulsa a los líderes a dar retroalimentación significativa a sus colaboradores con reportes detallados que priorizan las áreas de mejora identificadas.</p>
             </div>
 
             <div class="benefit">
                <div class="benefit-icon willFade del300">
-                  <img src="img/ic-003_1.svg" alt="Plataforma de Evaluación de Desempeño">
+                  <img src="img/ic-003_2.svg" alt="Plataforma de Evaluación de Desempeño">
                </div>
                <h4 class="willFadeUp del300">Orienta el desarrollo</h4>
                <p class="willFade del300">Empodera a cada líder para que empiecen a crear planes de acción que permitan cerrar las brechas de competencias identificadas.</p>
@@ -73,7 +73,7 @@
                <img src="img/results-1.png" alt="Resultados de competencias">
             </div>
             <div class="pic2 willFadeLeft del300">
-               <img src="img/results-1.png" alt="Resultados de competencias">
+               <img src="img/results-2.png" alt="Resultados de competencias">
             </div>
          </div>
       </div>

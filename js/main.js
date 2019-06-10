@@ -69,7 +69,7 @@ function OpenVideo() {
    function onYouTubePlayerAPIReady() {
      player = new YT.Player('ytplayer', {
         height: '315',
-        width: '560',
+        width: '100%',
         videoId: 'b8n6XHcjshw',
         events: {
           'onReady': onPlayerReady
@@ -94,6 +94,43 @@ function OpenVideo() {
     $('#VideoTestimonial').fadeOut(400);
   });
 
+}
+
+
+function OpenVideoStep() {
+  $('#thumnail').fadeOut(400);
+  $('#videoSergio').fadeIn(400);
+
+   // Replace the 'ytplayer' element with an <iframe> and
+   // YouTube player after the API code downloads.
+   var playerSec;
+   function onYouTubePlayerAPIReady() {
+     playerSec = new YT.Player('videoSergio', {
+        height: '378',
+        width: '100%',
+        videoId: 'qapsUK4qimg',
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+     });
+   }
+
+
+   // 4. The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+      event.target.playVideo();
+    }
+    
+    function onPlayerStateChange(event) {
+      if (event.data == 0) {
+        $('#videoSergio').fadeOut(400);
+        $('#thumnail').fadeIn(400);
+      }
+    }
+
+
+  onYouTubePlayerAPIReady();
 }
 
 // Cookie
@@ -174,6 +211,7 @@ $(document).ready(function(){
   $('#contacto2').hide();
   $('#loading-form').hide();
   $('#step_2').hide();
+  $('#videoSergio').hide();
   $('#VideoTestimonial').hide();
   descargar();
 });
@@ -258,8 +296,8 @@ $('#contacto').validate(  {
       sendMixPannel1();
 
 
-      var params = parsedUrl.param();
-      console.log(params);
+      // var params = parsedUrl.param();
+      // console.log(params);
     })
   }
 });

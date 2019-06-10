@@ -1,10 +1,16 @@
-<div class="Hero">
-   <div class="HeroContainer">
-      <div class="HeroLogo">
-         <img src="img/logo_flex_white.svg" alt="Logo Flex" class="img-responsive">
+<div class="StepSecond">
+   <div class="StepSecondContainer">
+      <div class="title">
+         <h3>Conoce la ruta que siguió Sergio en Acsendo Flex para lograr su máximo potencial</h3>
       </div>
-      <div class="HeroCta">
-         <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/b8n6XHcjshw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="videoStep">
+         <div id="videoSergio"></div>
+         <div class="thumnail" id="thumnail">
+            <img src="img/videoThumnail.png" alt="Video Acsendo">
+            <div class="playButtonSec" id="playButtonSec" onclick="OpenVideoStep()">
+               <img src="img/play-icon.svg" alt="Play Button  ">
+            </div>
+         </div>
       </div>
    </div>
 </div>
