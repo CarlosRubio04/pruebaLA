@@ -63,21 +63,23 @@ function sendData() {
 	$phone = $_POST["phone"];
     $empleados = $_POST["empleados"];
     $c_utmz = $_POST["c_utmz"];
+    $c_trf = $_POST["c_trf"];
 
     $authorization = "Authorization: Bearer ".reFreshToken()."";
     $data = array(
         "event_type" => "CONVERSION",
         "event_family" => "CDP",
         "payload" => array(
-            "conversion_identifier" => "landing_flex_ES_paso1",
+            "conversion_identifier" => "landing_competencias_ES_API",
             "name" => $name,
             "email" => $email,  
             "cf_pais" => $country,
             "mobile_phone" => $phone,
-            "job_title" => $job_title,
+            "cf_cargo_rol" => $job_title,
             "cf_numero_empleados" => $empleados,
             "company_name" => $company,
-            "cf_utmz" => $c_utmz
+            "traffic_source" => $c_trf, 
+            "cf_utm_term" => $c_utmz
         )
     );                                                                    
     $data_string = json_encode($data);                                                                                   

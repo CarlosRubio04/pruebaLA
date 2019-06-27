@@ -7,7 +7,7 @@
                     <div class="TestimonialContent">
                         <p>
                             <span>“</span>
-                            El software de Acsendo nos permite mover competencias, mover comportamientos y nos permite generar objetividad en la evaluación
+                            El software de Acsendo nos permite mover competencias y comportamientos y nos ayuda a generar objetividad en la evaluación. 
                         </p>
                         <div class="PlayButton" id="PlayButton" onclick="OpenVideo()">
                             <div class="icon">
@@ -52,7 +52,12 @@
     </div> 
     <div class="ContainerRight">
         <div class="FormContainer">
+            <div class="CloseForm" id="CloseForm">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </div>
             <?php require_once('blocks/formulario.php'); ?>
         </div>
     </div>
 </section>
+
+<?php require_once('blocks/footer.php'); ?>

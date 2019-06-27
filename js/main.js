@@ -62,7 +62,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 function OpenVideo() {
   $('#VideoTestimonial').fadeIn(400);
-   
+  ga('send', 'event', 'Video', 'play', 'Video Testimonial');
    // Replace the 'ytplayer' element with an <iframe> and
    // YouTube player after the API code downloads.
    var player;
@@ -71,6 +71,10 @@ function OpenVideo() {
         height: '315',
         width: '100%',
         videoId: 'b8n6XHcjshw',
+        playerVars: {
+          'rel': 0, 
+          'showinfo': 0
+        },
         events: {
           'onReady': onPlayerReady
         }
@@ -100,7 +104,7 @@ function OpenVideo() {
 function OpenVideoStep() {
   $('#thumnail').fadeOut(400);
   $('#videoSergio').fadeIn(400);
-
+  ga('send', 'event', 'Video Sergio', 'play', 'Video Sergio');
    // Replace the 'ytplayer' element with an <iframe> and
    // YouTube player after the API code downloads.
    var playerSec;
@@ -109,6 +113,10 @@ function OpenVideoStep() {
         height: '378',
         width: '100%',
         videoId: 'qapsUK4qimg',
+        playerVars: {
+          rel: 0, 
+          showinfo: 0
+        },
         events: {
           'onReady': onPlayerReady,
           'onStateChange': onPlayerStateChange
@@ -137,6 +145,7 @@ function OpenVideoStep() {
 function read_cookie(a){
   var b=a+"=";
   var c=document.cookie.split(";");
+  console.log(c);
   for(var d=0;d<c.length;d++){
       var e=c[d];
       while(e.charAt(0)==" ")
@@ -150,41 +159,81 @@ const utmz = read_cookie('__utmz');
 console.log(utmz);
 $('#c_utmz').val(utmz);
 
+function get_TRF() {
+  let trf = read_cookie('__trf.src');
+  let ctrf = trf ? trf.replace('encoded_', '') : null;
+  console.log(ctrf);
+  $('#c_trf').val(ctrf);
+}
+get_TRF();
+
 function findCountry() {
   $.getJSON('https://api.ipdata.co/?api-key=7836a4acdb465320d4436d3ce4bfdd37f004278fd8a2aabb0c6cce9d', function(result) {
-    console.log(result)
+    console.log(result);
     $('#country').val(result.country_name);
     $('#phone').val(`(${result.calling_code}) `);
     $('#country-flag').html(result.emoji_flag);
+    document.title = `Evaluación de Competencias Desempeño Laboral | ${result.country_name} - Acsendo`
 
     // MX, CO, BR, CONOSUR
+
+    const NAME_CONT = $('#Name');
 
     const CO_ADRESS = "Carrera 12 # 96-49 Bogotá, Colombia.";
     const MX_ADRESS = "Varsovia 36 · Col Juarez. Ciudad de México, México";
     const CL_ADRESS = "Avenida Apoquindo 5950, Las Condes, Santiago Chile";
 
+    const JULIANA = `<img src="img/juliana.png" alt="Juliana">`;
+    const EDUARDO = `<img src="img/eduardo.png" alt="Eduardo">`;
+    const DANIEL = `<img src="img/daniel.png" alt="Daniel">`;
+    const SEBASTIAN = `<img src="img/sebastian.png" alt="Sebastian">`;
+    const ALEJANDRO = `<img src="img/alejandro.png" alt="Alejandro">`;
+
     switch (result.country_code) {
       case 'CO':
-        $('#imgClients').attr('src','img/tres_logos.jpg');
+        $('#imgClients').attr('src','img/logos-colombia.jpg');
         $('#address').text(CO_ADRESS);
+        $('#sdr').html(DANIEL);
+        NAME_CONT.text('¡Hola, soy Daniel!');
       break;
       case 'MX':
-        $('#imgClients').attr('src','img/tres_logos.jpg');
+        $('#imgClients').attr('src','img/logos-mexico.jpg');
         $('#address').text(MX_ADRESS);
+        $('#sdr').html([EDUARDO,ALEJANDRO]);
+        NAME_CONT.text('¡Hola!');
       break;
       case 'CL':
-        $('#imgClients').attr('src','img/tres_logos.jpg');
+      case 'AR':
+      case 'UY':
+      case 'PY':
+      case 'BO':
+        $('#imgClients').attr('src','img/logos-cono.jpg');
         $('#address').text(CL_ADRESS);
+        $('#sdr').html(SEBASTIAN);
+        NAME_CONT.text('¡Hola, soy Sebastian!');
+      break;
+      case 'PE':
+      case 'EC':
+      case 'PA':
+      case 'CR':
+      case 'SV':
+      case 'DO':
+        $('#imgClients').attr('src','img/logos-centro.jpg');
+        $('#address').text(CO_ADRESS);
+        $('#sdr').html(JULIANA);
+        NAME_CONT.text('¡Hola, soy Juliana!');
       break;
       default:
-        $('#imgClients').attr('src','img/tres_logos.jpg');
-        $('#address').text(CO_ADRESS);      
+        $('#imgClients').attr('src','img/logos-colombia.jpg');
+        $('#address').text(CO_ADRESS);
+        $('#sdr').html(DANIEL);   
+        NAME_CONT.text('¡Hola, soy Daniel!');
     }
   });
 }
 let webmail = null;
 function verifyEmail(email) {
-  $.getJSON(`https://api.hunter.io/v2/email-verifier?email=${email}&api_key=0040ce09749c6875421b1026a971c4a49f30eab7`, function(res) {
+  $.getJSON(`https://api.hunter.io/v2/email-verifier?email=${email}&api_key=f4606747f1c3bbfe28b879bbe953ba1fa1fc72e8`, function(res) {
     webmail = res.data
     console.log(webmail)
   })
@@ -213,6 +262,16 @@ $(document).ready(function(){
   $('#step_2').hide();
   $('#videoSergio').hide();
   $('#VideoTestimonial').hide();
+  $('.btn-movil').on('click', function() {
+    $('.ContainerRight').addClass('form-active');
+    $('#CloseForm').show();
+  });
+
+  $('#CloseForm').on('click', function() {
+    $('.ContainerRight').removeClass('form-active');
+    $('#CloseForm').hide();
+  });
+
   descargar();
 });
 
@@ -238,7 +297,7 @@ $('#contacto').validate(  {
     },
     phone: {
       required: true,
-      minlength: 7
+      minlength: 9
     },
     email: {
       required: true,
@@ -266,36 +325,57 @@ $('#contacto').validate(  {
     },
     email: {
       required: "Por favor escribe tu E-mail",
-      minlength: "Escribe un E-mail valido"
+      email: "Escribe un E-mail valido"
     },
     company: {
-      required: "Por favor selecciona un opsión",
+      required: "Por favor escribe el nombre de tu empresa",
     },
     empleados: {
-      required: "Por favor selecciona un opsión",
+      required: "Por favor seleccione una opción",
     },
     job_title: {
-      required: "Por favor completa este campo",
+      required: "Por favor seleccione una opción",
     }
   },
   submitHandler: function(form) {
     //cargar();
     const MAIN_EMAIL = $('#email').val(); 
+    const JOB_TITLE = $('#job_title').val();
+    const EMPLOYS = $('#empleados').val();
     $('#loading-form').fadeIn();
     $.post('includes/validation.php',$('#contacto').serialize())
     .done(function(data){
-      $('#init').fadeOut(400);
-      $('#contacto').hide();
-      //descargar();
-      $('#loading-form').fadeOut(400);
-      $('#email2').val(MAIN_EMAIL);
-      $('#contacto2').fadeIn(400);
-      $('#step_2').fadeIn(400);
+      window.localStorage.setItem('email', MAIN_EMAIL);
       const res = JSON.parse(data);
-      console.log(res);
-      sendMixPannel1();
-
-
+      ga('send', 'event', 'Convertion', 'Submit Form', 'Submit 1st Form');
+      // console.log(res);
+      
+      if (JOB_TITLE == 'Otro') {
+        sendMixPannel1();
+        window.location.href = "?content=Gracias-por-contactarnos";
+      } else if (EMPLOYS == '1-10' || EMPLOYS == '11-30') {
+        if (JOB_TITLE == 'Consultor') {
+          $('#init').fadeOut(400);
+          $('#contacto').hide();
+          $('#loading-form').fadeOut(400);
+          $('#email2').val(MAIN_EMAIL);
+          $('#contacto2').fadeIn(400);
+          $('#step_2').fadeIn(400);
+          sendMixPannel1();
+        } else {
+          sendMixPannel1();
+          window.location.href = "?content=Gracias-por-tu-interes";
+        }
+      } else {
+        $('#init').fadeOut(400);
+        $('#contacto').hide();
+        $('#loading-form').fadeOut(400);
+        $('#email2').val(MAIN_EMAIL);
+        $('#contacto2').fadeIn(400);
+        $('#step_2').fadeIn(400);
+        sendMixPannel1();
+      }
+ 
       // var params = parsedUrl.param();
       // console.log(params);
     })
@@ -353,13 +433,13 @@ $('#contacto2').validate(  {
   },
   messages: {
     product: {
-      required: "Por favor completa este campo",
+      required: "Por favor completa este campo"
     },
     sector: {
-      required: true
+      required: "Por favor selecciona un sector"
     },
     dolor: {
-      required: true
+      required: "Por favor selecciona una opción"
     },
     message: {
       required: "Por favor completa este campo",
@@ -374,8 +454,10 @@ $('#contacto2').validate(  {
       const res = JSON.parse(data);
       descargar();
       // $('#contacto2').slideDown();
-      console.log(res);
+      //console.log(res);
+      ga('send', 'event', 'Convertion', 'Submit Form 2', 'Submit 2nd Form');
       sendMixPannel2();
+      window.location.href = "?content=Nos-contactaremos-pronto";
     })
   }
 });
@@ -406,3 +488,41 @@ function sendMixPannel2() {
       'Fecha de registro' : `${new Date()}`
     });
 }
+
+
+// Validacion del formulario
+$('#formGracias').validate(  {
+  rules: {
+    mensaje: {
+      required: true
+    }
+  },
+  messages: {
+    mensaje: {
+      required: "Por favor completa este campo",
+    }
+
+  },
+  submitHandler: function(form) {
+    cargar();
+    $.post('includes/send_mail.php',$('#formGracias').serialize())
+    .done(function(data){
+      // $('.form-control').val('');
+      const res = data;
+      descargar();
+      console.log(res);
+    })
+  }
+});
+
+
+window.onbeforeunload = closingCode;
+function closingCode(){
+   // do something...
+   const LOCATION = window.location.pathname;
+   if(LOCATION == '/demos/Evaluacion-de-desempeno-competencias-laborales/') {
+    ga('send', 'event', 'Close Page', `${LOCATION}`, 'Page Close');
+   }
+   return null;
+}
+

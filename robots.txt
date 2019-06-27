@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /demos/Evaluacion-de-desempeno-competencias-laborales/Nos-contactaremos-pronto/
+Disallow: /demos/Evaluacion-de-desempeno-competencias-laborales/Gracias-por-tu-interes/
+Disallow: /demos/Evaluacion-de-desempeno-competencias-laborales/Gracias-por-contactarnos/
+Allow: /demos/Evaluacion-de-desempeno-competencias-laborales/

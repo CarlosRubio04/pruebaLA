@@ -1,38 +1,39 @@
 <div class="Form">
-	<form name="contacto" id="contacto" class="fomo_instant" novalidate>
+	<form name="landing_competencias_ES" id="contacto" class="fomo_instant" novalidate>
 		<input type="hidden" name="country" id="country" class="form-control">
 		<input type="hidden" name="c_utmz" id="c_utmz">
+		<input type="hidden" name="c_trf" id="c_trf">
 		<div class="FormHeader">
-			<h2>Completa el formulario, nosotros te contactamos</h2>		
+			<h2>Agenda ahora una demostración con un experto</h2>		
 		</div>
 		<div class="form-group">
 			<label for="nombre">Nombre</label>
-			<input type="text" class="form-control" id="name" name="name" placeholder="Nombre" required/>
+			<input type="text" class="form-control" id="name" name="name" maxlength="40" placeholder="Nombre" required/>
 		</div>
 		<div class="form-group">
 			<label for="mail">Email corporativo</label>
-			<input type="text" class="form-control" id="email" name="email" placeholder="Email corporativo" required/>
+			<input type="text" class="form-control" id="email" name="email" maxlength="40" placeholder="Email corporativo" required/>
 		</div>
 		<div class="form-group">
 			<label for="phone">Teléfono</label>
-			<input type="text" class="form-control" name="phone" id="phone" placeholder="Teléfono" required/>
+			<input type="tel" class="form-control" name="phone" id="phone" maxlength="17" placeholder="Teléfono" required/>
 			<span id="country-flag" class="country-flag"></span>
 		</div>
 		<div class="form-group">
 			<label for="country">Empresa</label>
-			<input type="text" name="company" id="company" class="form-control" placeholder="Empresa">
+			<input type="text" name="company" id="company" class="form-control" maxlength="40" placeholder="Empresa">
 		</div>
 		<div class="form-group">
 				<label for="company">Número de empleados</label>
 				<select name="empleados" id="empleados" class="form-control">
-				<option value="" selected="">Número de Empleados*</option>
-						<option value="1-30">1 - 10</option>
-						<option value="30-50">11 - 50</option>
-						<option value="51-100">51 - 100</option>
-						<option value="101-150">101 - 150</option>
-						<option value="151-250">151 - 250</option>
-						<option value="251-500">251 - 500</option>
-						<option value="+500">+500</option>
+					<option value="" selected="">Número de Empleados</option>
+					<option value="1-10">1 - 10</option>
+					<option value="11-30">11 - 30</option>
+					<option value="31-50">31 - 50</option>
+					<option value="51-100">51 - 100</option>
+					<option value="101-250">101 - 250</option>
+					<option value="251-500">251 - 500</option>
+					<option value="+500">+500</option>
 				</select>
 		</div>
 		<div class="form-group">
@@ -52,29 +53,29 @@
 		</div>
 	</form>
 
-	<form name="contacto2" id="contacto2" class="fomo_instant" novalidate>
+	<form name="landing_competencias_ES_paso2" id="contacto2" class="fomo_instant" novalidate>
 		<div class="FormHeader">
-			<h2>Nuevo CTA</h2>
+			<h2>Cuéntanos más de ti y ayúdanos a preparar una mejor demostración</h2>
 		</div>
 		<input type="hidden" id="email2" name="email2">
 		
 	<div class="form-group">
 		<label for="sector">Sector</label>
 		<select name="sector" id="sector" class="form-control">
-			<option value="" selected="">Seleccione</option>        
-			<option value="Alimentación y bebidas">Alimentación y bebidas</option>            
-			<option value="Educación">Educación</option>            
-			<option value="Energía y medio ambiente">Energía y medio ambiente</option>            
-			<option value="Gobierno">Gobierno</option>            
-			<option value="Sanidad y farmaceútica">Sanidad y farmaceútica</option>          
-			<option value="Industria, Producción, Construcción">Industria, Producción, Construcción</option>            
-			<option value="Retail">Retail</option>            
-			<option value="Deporte y ocio">Deporte y ocio</option>            
-			<option value="Tecnología">Tecnología</option>            
-			<option value="Telecomunicaciones">Telecomunicaciones</option>            
-			<option value="Medios de comunicación y Marketing">Medios de comunicación y Marketing</option>            
-			<option value="Servicios">Servicios</option>            
-			<option value="Hoteleria y Turismo">Hoteleria y Turismo</option>  
+			<option value="" selected="">Seleccione</option>
+			<option value="Agropecuarios">Agropecuarios</option>
+			<option value="Comercio">Comercio</option>
+			<option value="Comunicaciones">Comunicaciones</option>
+			<option value="Construcción">Construcción</option>
+			<option value="Educación">Educación</option>
+			<option value="Financiero">Financiero</option>
+			<option value="Industrial">Industrial</option>
+			<option value="Minero y Energético">Minero y Energético</option>
+			<option value="Salud">Salud</option>
+			<option value="Servicios">Servicios</option>
+			<option value="Solidario">Solidario</option>
+			<option value="Transporte">Transporte</option>
+			<option value="Otro">Otro</option>
 		</select>
 	</div>
 	<input type="hidden" name="product" value="Competencias 360°">
@@ -91,16 +92,24 @@
 		</select>
 	</div> -->
 	<div class="form-group">
-		<label for="dolor">Dolor</label>
+		<label for="dolor">¿Cuál es el mayor desafío que afronta tu área de RRHH?</label>
 		<select name="dolor" id="dolor" class="form-control">
-					<option value="" selected="">Seleccione</option>
-          <option value="Opt 1">Opt 1</option>
-          <option value="Opt 2">Opt 2</option>
-		</select>
+			<option value="" selected="">Seleccione</option>
+        	<option value="Mantener alineada la estrategia">Mantener alineada la estrategia</option>
+	  		<option value="Cubrir las vacantes con el mejor talento">Cubrir las vacantes con el mejor talento</option>
+		  	<option value="Retener y fidelizar a los colaboradores">Retener y fidelizar a los colaboradores</option>
+			<option value="Mejorar el estado del clima laboral">Mejorar el estado del clima laboral</option>
+			<option value="Facilitar el seguimiento de las metas">Facilitar el seguimiento de las metas</option>
+			<option value="Orientar el desarrollo y la formación">Orientar el desarrollo y la formación</option>
+			<option value="Crear un plan de sucesión para líderes">Crear un plan de sucesión para líderes</option>
+			<option value="Optimizar la asignación de bonos">Optimizar la asignación de bonos</option>
+		</select>	
 	</div>
 	<div class="form-group">
 		<label for="message">Mensaje</label>
-		<textarea name="message" id="message" class="form-control">Encabezado del mensaje</textarea>
+		<textarea name="message" id="message" class="form-control" rows="5">
+Tardo mucho tiempo creando reportes,
+quiero mejorar el seguimiento de indicadores...</textarea>
 	</div>
 	<div class="FormSubmit">
 		<button type="submit" class="btn btn-success">Enviar</button>
@@ -117,10 +126,11 @@
 
 <div id="loading-form" class="loading-form">
 	<div class="loading-form-container">
-	<div class="orbit-spinner">
-      <div class="orbit"></div>
-      <div class="orbit"></div>
-      <div class="orbit"></div>
-    </div>
+		<!-- <div class="hollow-dots-spinner" :style="spinnerStyle">
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+		</div> -->
+		<img src="img/acsendito.gif" alt="Acsendo">
 	</div>
 </div>

@@ -61,20 +61,20 @@ function sendData() {
 	$product = $_POST["product"];
 	$message = $_POST["message"];
 
-    $authorization = "Authorization: Bearer ".createToken()."";
-    $data = array(
-        "event_type" => "CONVERSION",
-        "event_family" => "CDP",
-        "payload" => array(
-            "conversion_identifier" => "landing_flex_ES_paso2",
-            "email" => $email,
-            "job_title" => $job_title,   
-            "numero_empleados" => $n_empleados,
-            "Producto de interés" => $product,
-            "Anotaciones" => $message,
-        )
-    );                                                                    
-    $data_string = json_encode($data);                                                                                   
+    $authorization = "Authorization: Bearer ".reFreshToken()."";
+    // $data = array(
+    //     "event_type" => "CONVERSION",
+    //     "event_family" => "CDP",
+    //     "payload" => array(
+    //         "conversion_identifier" => "landing_flex_ES_paso2",
+    //         "email" => $email,
+    //         "job_title" => $job_title,   
+    //         "numero_empleados" => $n_empleados,
+    //         "Producto de interés" => $product,
+    //         "Anotaciones" => $message,
+    //     )
+    // );                                                                    
+    // $data_string = json_encode($data);                                                                                   
                                                                                                                     
     $ch = curl_init('https://api.rd.services/platform/contacts/fields');                                                                      
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");                                                                                                                                    

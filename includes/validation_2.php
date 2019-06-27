@@ -66,9 +66,9 @@ function sendData() {
         "event_type" => "CONVERSION",
         "event_family" => "CDP",
         "payload" => array(
-            "conversion_identifier" => "landing_flex_ES_paso2",
+            "conversion_identifier" => "landing_competencias_ES_paso2_API",
             "email" => $email,
-            "sector" => $sector,   
+            "cf_sector" => $sector,  
             "cf_dolor" => $dolor,
             "cf_producto_interes" => $product,
             "cf_anotaciones" => $message,
